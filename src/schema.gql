@@ -3,8 +3,7 @@
 # ------------------------------------------------------
 
 input CreateOwnerInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  name: String!
 }
 
 input CreatePetInput {
@@ -20,13 +19,15 @@ type Mutation {
 }
 
 type Owner {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  name: String!
+  pets: [Pet!]
 }
 
 type Pet {
   id: Int!
   name: String!
+  owner: Owner!
+  ownerId: Float!
   type: String
 }
 
@@ -38,7 +39,6 @@ type Query {
 }
 
 input UpdateOwnerInput {
-  """Example field (placeholder)"""
-  exampleField: Int
   id: Int!
+  name: String
 }
