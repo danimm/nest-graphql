@@ -2,13 +2,26 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreateOwnerInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 input CreatePetInput {
   name: String!
   type: String
 }
 
 type Mutation {
+  createOwner(createOwnerInput: CreateOwnerInput!): Owner!
   createPet(createPetInput: CreatePetInput!): Pet!
+  removeOwner(id: Int!): Owner!
+  updateOwner(updateOwnerInput: UpdateOwnerInput!): Owner!
+}
+
+type Owner {
+  """Example field (placeholder)"""
+  exampleField: Int!
 }
 
 type Pet {
@@ -19,5 +32,13 @@ type Pet {
 
 type Query {
   getPets(id: Int!): Pet!
+  owner(id: Int!): Owner!
+  owners: [Owner!]!
   pets: [Pet!]!
+}
+
+input UpdateOwnerInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
 }

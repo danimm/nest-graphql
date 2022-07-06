@@ -7,6 +7,7 @@ import { join } from 'path';
 import { PetsModule } from './pets/pets.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { OwnersModule } from './owners/owners.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { AppService } from './app.service';
       synchronize: true,
     }),
     PetsModule,
+    OwnersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
