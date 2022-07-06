@@ -8,6 +8,7 @@ input CreateOwnerInput {
 
 input CreatePetInput {
   name: String!
+  ownerId: Int!
   type: String
 }
 
@@ -17,6 +18,7 @@ type Mutation {
 }
 
 type Owner {
+  id: Int!
   name: String!
   pets: [Pet!]
 }
